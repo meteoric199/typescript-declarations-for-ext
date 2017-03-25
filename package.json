@@ -12,9 +12,6 @@
 	"devDependencies": {
 		"nodeunit": "^0.9.0",
 		"shelljs": "^0.3.0"
-	},
-	"scripts": {
-		"test": "tsc --module commonjs test.ts && nodeunit test.js",
-		"prepublish": "tsc --module commonjs generate-defaults.ts && node generate-defaults.js"
 	}
+	
 }

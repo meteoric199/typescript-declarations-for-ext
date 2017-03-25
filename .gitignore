@@ -1,3 +1,4 @@
-*.js
+/*.js
 *.*~
 node_modules
+/ext/ext-3.0-docs/

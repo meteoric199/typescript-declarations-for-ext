@@ -13,3 +13,27 @@ Generating your own declaration file
 ====================================
 
 The easiest way to do this is probably to modify `generate-defaults.ts` and add another entry to the `EXT_VERSIONS` array. You can then run `npm install` to run the script.
+
+
+Generate Extjs 3.x declaration file
+====================================
+
+1. delete some js
+
+    some js file have error,delete them.
+    
+    ```
+    ext-3.0\src\adapter\core\ext-base-begin.js  
+    ext-3.0\src\adapter\core\ext-base-end.js  
+    ext-3.0\src\locale  
+    ```
+
+2. generate docs
+    ``` cmd
+        jsduck ext-3.0/src --export=full --output ext-3.0-docs
+    ```
+3. generate Extjs-3.x.d.ts
+    
+    ``` cmd
+     tsc --module commonjs generator.ts && node generator.js ext/ext-3.0-docs declarations/ExtJs-3.0.d.ts
+   ```
